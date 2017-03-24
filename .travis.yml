@@ -16,6 +16,10 @@ android:
     - android-sdk-license-.+
     - android-sdk-preview-license-.+
     - google-gdk-license-.+
+    
+before_install:
+    - git clone https://github.com/urho3d/android-ndk.git $HOME/android-ndk-root
+    - export ANDROID_NDK_HOME=$HOME/android-ndk-root
 
 script:
   - bash ./gradlew :app:assembleDebug
